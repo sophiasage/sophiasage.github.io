@@ -41,6 +41,7 @@
 <meta property="og:description" content="My Hobbies">
 
 <style>.mySlides {display:none;}</style>
+<style>.mySlides2 </style>
 <body>
 
 <header id="header">
@@ -112,6 +113,37 @@ function showDivs(n) {
 		</p>
 	</div>
 
+<h2 style="text-align:center">Film Photography</h2>
+<div class="figure" style = "padding:10px; align:center">
+  <img class="mySlides2" src="../images/cliffs.jpg" style="display:block; width:50%">
+  <img class="mySlides2" src="../images/r001-029.jpg" style="display:block; width:50%">
+  <img class="mySlides2" src="../images/ocean.jpg" style="display:block; width:50%">
+  <img class="mySlides2" src="../images/oxford_color22.jpg" style="display:block; width:50%">
+  <img class="mySlides2" src="../images/officeview.jpg" style="display:block; width:50%">
+
+  <a class="btn" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="btn" onclick="plusDivs(1)">&#10095;</a>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides2");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
 
 
 
