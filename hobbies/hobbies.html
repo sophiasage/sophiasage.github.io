@@ -83,6 +83,47 @@
 </div>
 
 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+</style>
+
 <h2 style="text-align:center">Film Photography</h2>
 <div class="container" style = "padding:10px; align:center">
   <img class="mySlides2" src="../images/cliffs.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
@@ -91,8 +132,8 @@
   <img class="mySlides2" src="../images/oxford_color22.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
   <img class="mySlides2" src="../images/officeview.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
 
-  <a class="btn" onclick="plusDivsa(-1,'mySlides2')">&#10094;</a>
-  <a class="btn" onclick="plusDivsa(1, 'mySlides2')">&#10095;</a>
+  <a class="prev" onclick="plusDivsa(-1,'mySlides2')">&#10094;</a>
+  <a class="next" onclick="plusDivsa(1, 'mySlides2')">&#10095;</a>
 </div>
 
 
