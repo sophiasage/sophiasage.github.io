@@ -72,11 +72,11 @@
 <h2 style="text-align:center">Knitting</h2>
 
 <div class="figure" style = "padding:10px; align:center">
-  <img class="mySlides" src="../images/brown_sweater.png" style="display:block; width:50%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/gloves.png" style="display:block;        width:50%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/hatpng.png" style="display:block;        width:50%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/sweatervestpng.png" style="display:block;width:50%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/vest.png" style="display:block;          width:50%; margin-left:auto; margin-right:auto">
+  <img class="mySlides" src="../images/brown_sweater.png" style="display:block; width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides" src="../images/gloves.png" style="display:block;        width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides" src="../images/hatpng.png" style="display:block;        width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides" src="../images/sweatervestpng.png" style="display:block;width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides" src="../images/vest.png" style="display:block;          width:100%; margin-left:auto; margin-right:auto">
 
   <a class="btn" style="align:center" onclick="plusDivsa(-1,'mySlides')">&#10094;</a>
   <a class="btn" style="align:center" onclick="plusDivsa(1,'mySlides')">&#10095;</a>
@@ -85,11 +85,11 @@
 
 <h2 style="text-align:center">Film Photography</h2>
 <div class="container" style = "padding:10px; align:center">
-  <img class="mySlides2" src="../images/cliffs.jpg" style="display:block; width:70%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/r001-029.jpg" style="display:block; width:70%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/ocean.jpg" style="display:block; width:70%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/oxford_color22.jpg" style="display:block; width:70%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/officeview.jpg" style="display:block; width:70%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/cliffs.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/r001-029.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/ocean.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/oxford_color22.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/officeview.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
 
   <a class="btn" onclick="plusDivsa(-1,'mySlides2')">&#10094;</a>
   <a class="btn" onclick="plusDivsa(1, 'mySlides2')">&#10095;</a>
@@ -214,10 +214,10 @@ function showDivsa(n, classname) {
 <div class="container">
 
   <!-- Full-width images with number text -->
-  <div class="mySlides">
+  <div class="mySlides3">
       <img src="../images/cliffs.jpg" style="width:100%">
   </div>
-  <div class="mySlides">
+  <div class="mySlides3">
       <img src="../images/ocean.jpg" style="width:100%">
   </div>
     
@@ -256,7 +256,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
+  let slides = document.getElementsByClassName("mySlides3");
   let dots = document.getElementsByClassName("demo");
   let captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
