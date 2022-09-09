@@ -126,11 +126,11 @@
 
 <h2 style="text-align:center">Film Photography</h2>
 <div class="container" style = "padding:10px; align:center">
-  <img class="mySlides2" src="../images/cliffs.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/r001-029.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/ocean.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/oxford_color22.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/officeview.jpg" style="display:block; width:1000%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/cliffs.jpg"         style="display:block; width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/r001-029.jpg"       style="display:block; width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/ocean.jpg"          style="display:block; width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/oxford_color22.jpg" style="display:block; width:100%; margin-left:auto; margin-right:auto">
+  <img class="mySlides2" src="../images/officeview.jpg"     style="display:block; width:100%; margin-left:auto; margin-right:auto">
 
   <a class="prev" onclick="plusDivsa(-1,'mySlides2')">&#10094;</a>
   <a class="next" onclick="plusDivsa(1, 'mySlides2')">&#10095;</a>
@@ -158,161 +158,6 @@ function showDivsa(n, classname) {
 }
 </script>
 
-<!-- can I make a slideshow gallery instead-->
-<!-- Container for the image gallery -->
-<link rel="stylesheet" type="text/css" href="style_hobbies.css">
-<!-- testing if that import of the style sheet didn't work -->
-<style>
-* {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides3 {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-</style>
-
-
-<div class="container">
-
-  <!-- Full-width images with number text -->
-  <div class="mySlides3">
-      <img src="../images/cliffs.jpg" style="width:100%">
-  </div>
-  <div class="mySlides3">
-      <img src="../images/ocean.jpg" style="width:100%">
-  </div>
-    
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="../images/cliffs.jpg" style="width:100%" onclick="currentSlide(1)" alt="Bodega Headlands">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="../images/ocean.jpg" style="width:100%" onclick="currentSlide(1)" alt="Bodega Headlands 2">
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides3");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
 </body>
 </main>
 </html>
