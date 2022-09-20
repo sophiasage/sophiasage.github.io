@@ -1,7 +1,15 @@
 <html>
   <head>
-    <link rel="stylesheet" href="./dist/reveal.css">
-    <link rel="stylesheet" href="./dist/theme/white.css">
+  <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A Post</title>
+
+    <link rel="stylesheet" href="/dist/reveal.css">
+    <link rel="stylesheet" href="/dist/theme/white.css">
   </head>
   <body>
     <div class="reveal">
@@ -14,9 +22,32 @@
 	</section>
       </div>
     </div>
-    <script src="./dist/reveal.js"></script>
+    <script src="/dist/reveal.js"></script>
+    <script src="/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="/reveal.js/plugin/notes/notes.js"></script>
+    <script src="/reveal.js/plugin/math/math.js"></script>
     <script>
-      Reveal.initialize();
+      Reveal.initialize({
+	plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax2],
+        controlsTutorial: false,
+        slideNumber: true,
+        width: 1200,
+        height: 800,
+        fragmentInURL: true,
+        center: true,
+        // history: true,
+        mathjax2: {
+          // mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js',
+          config: 'TeX-AMS_HTML',
+        },
+      })
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": {minScaleAdjust: 100},
+        CommonHTML: {minScaleAdjust: 100}
+      });
     </script>
   </body>
 </html>
