@@ -1,6 +1,19 @@
----
-layout: slides
-title: "My First Blog - How to make and html presentation with reveal.js"
-markdown: main.md
-nav_include: true
----
+<html>
+  <head>
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="main.md"
+		 data-separator="^\n\n\n"
+		 data-separator-vertial="^\n\n"
+		 data-separator-notes="^Note:"
+		 data-charset="iso-8859-15">
+	</section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script>
+
