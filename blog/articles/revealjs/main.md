@@ -1,7 +1,7 @@
 # My First Blog - Making html presentations with reveal.js
 
 Today I learned how to make nice html presentations from markdown with 
-[revealjs](https://revealjs.com/).
+[reveal.js](https://revealjs.com/).
 
 ----
 
@@ -9,7 +9,7 @@ Today I learned how to make nice html presentations from markdown with
 
 ## Hello World
 
-
+---
 ## A Subpage?
 
 
