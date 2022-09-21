@@ -19,14 +19,12 @@ Today I learned how to make nice html presentations from markdown with
 ----
 # `$ \langle \rangle $` 
 
-<span style="color:white">
   ```js [1-2|3|4]
       let a = 1;
       let b = 2;
       let c = x => 1 + 2 + x;
       c(3);
       ```
-</span>
 ----
 
 Fade in <!-- .element: class="fragment" -data-fragment-index="1"-->
