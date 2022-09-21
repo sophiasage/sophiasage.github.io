@@ -27,11 +27,11 @@ Today I learned how to make nice html presentations from markdown with
       ```
 ----
 
-Fade in <!-- .element: class="fragment">
-Fade-out <!-- .element: class="fragment fade-out">
-Highlight red <!-- .element: class="fragment highlight-red>
-fade-in-then-out <!-- .element: class="fragment fade-in-then-out>
-fade-up <!-- .element: class="fragment fade-up>
+Fade in <!-- .element: class="fragment" -->
+Fade-out <!-- .element: class="fragment fade-out" -->
+Highlight red <!-- .element: class="fragment highlight-red -->
+fade-in-then-out <!-- .element: class="fragment fade-in-then-out -->
+fade-up <!-- .element: class="fragment fade-up -->
 
 
 
