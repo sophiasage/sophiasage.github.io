@@ -30,8 +30,6 @@ Today I learned how to make nice html presentations from markdown with
 ----
 # Animations
 
----
-## still getting this to work
 
 ---
 Fade in <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -40,9 +38,9 @@ Fade-out <!-- .element: class="fragment fade-out" data-fragment-index="2" -->
 
 Highlight red <!-- .element: class="fragment highlight-red" data-fragment-index="3"  -->
 
-fade-in-then-out <!-- .element: class="fragment fade-in-then-out" data-fragment-index="2"   -->
+fade-in-then-out <!-- .element: class="fragment fade-in-then-out" data-fragment-index="4"   -->
 
-fade-up <!-- .element: class="fragment fade-up" data-fragment-index="4" -->
+fade-up <!-- .element: class="fragment fade-up" data-fragment-index="5" -->
 
 
 
