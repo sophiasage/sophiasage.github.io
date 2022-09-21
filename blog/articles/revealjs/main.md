@@ -17,7 +17,7 @@ Today I learned how to make nice html presentations from markdown with
 ## A Subpage?
 
 ----
-# `$$ \langle \rangle $$` 
+# `$ \langle \rangle $` 
 
   ```js [1-2|3|4]
       let a = 1;
@@ -27,11 +27,11 @@ Today I learned how to make nice html presentations from markdown with
       ```
 ----
 
-Fade in <!-- .element: class="fragment"-->
-Fade-out <!-- .element: class="fragment fade-out"-->
-Highlight red <!-- .element: class="fragment highlight-red"-->
-fade-in-then-out <!-- .element: class="fragment fade-in-then-out"-->
-fade-up <!-- .element: class="fragment fade-up"-->
+Fade in <!-- .element: class="fragment" data-fragment-index="1" -->
+Fade-out <!-- .element: class="fragment fade-out" data-fragment-index="2" -->
+Highlight red <!-- .element: class="fragment highlight-red"data-fragment-index="3"  -->
+fade-in-then-out <!-- .element: class="fragment fade-in-then-out"data-fragment-index="2"   -->
+fade-up <!-- .element: class="fragment fade-up"data-fragment-index="4" -->
 
 
 
