@@ -17,7 +17,7 @@ Today I learned how to make nice html presentations from markdown with
 ## A Subpage?
 
 ----
-# `$ \langle \rangle $` 
+# `$$ \langle \rangle $$` 
 
   ```js [1-2|3|4]
       let a = 1;
