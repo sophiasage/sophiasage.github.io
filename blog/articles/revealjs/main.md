@@ -40,7 +40,7 @@ Highlight red <!-- .element: class="fragment highlight-red" data-fragment-index=
 
 fade-in-then-out <!-- .element: class="fragment fade-in-then-out" data-fragment-index="4"   -->
 
-fade-up <!-- .element: class="fragment fade-up" data-fragment-index="5" -->
+fade-up <!-- .element: class="fragment fade-up" data-fragment-index="6" -->
 
 
 
