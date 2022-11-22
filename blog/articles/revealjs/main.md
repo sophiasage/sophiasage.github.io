@@ -110,12 +110,6 @@ There is aliasing! We need to apply a low pass filter to remove the unwanted ima
 
 
 
-Our discrete-time frequency is:
-`$$\hat{\omega} = \frac{2 \pi k }{16} = \frac{2 \pi k T_s}{T_s} = \frac{2 \pi k f_0}{f_s}. $$`
-
-Thus, if we follow the sampling theorem and limit `$f_s \geq 2 f_0$`, then
-`$k$` is constrained to lie between -7 and 8. 
-
 
 
 
