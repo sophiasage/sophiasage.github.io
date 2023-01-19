@@ -1,6 +1,12 @@
 VHDL Coding Notes
 ---------------------------
 
+Useful Links
+---------------------------
+  - [Introduction to the VHDL Development Process](https://fpgatutorial.com/introduction-to-fpga-development/)
+  - [Reddit List of FPGA links](https://www.reddit.com/r/FPGA/comments/omrnrk/list_of_useful_links_for_beginners_and_veterans/)
+  - [Blog Post on VHDL and Vim](https://www.0x7.ch/vim/vhdl/)
+  - [List of Predefined Attributes](https://redirect.cs.umbc.edu/portal/help/VHDL/attribute.html)
 
 Vocabulary
 ------------------
@@ -8,7 +14,7 @@ Vocabulary
     synchronous digital circuit in terms of data between hardware registers,
     and the logical operations performed on those signals.
 
-  - synchronous digital circuit: the changes in the state of memory element
+  - synchronous digital circuit: the changes in the state of memory elements
     are synchronized by a clock signal. 
 
   - GPIO : general purpose input/output. Used to control or monitor circuitry 
