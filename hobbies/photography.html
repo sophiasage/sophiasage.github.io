@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 100vh;
+      background: #f7f7f7;
+      border-right: 1px solid #e0e0e0;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.03);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 32px;
+    }
+    .sidebar a {
+      display: block;
+      color: #337ab7;
+      text-decoration: none;
+      font-size: 1.1em;
+      margin: 18px 0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      width: 90%;
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .sidebar a.active, .sidebar a:hover {
+      background: #e6f0fa;
+      color: #23527c;
+    }
+    @media (max-width: 600px) {
+      .sidebar { width: 100vw; height: auto; position: static; flex-direction: row; justify-content: center; border-right: none; border-bottom: 1px solid #e0e0e0; box-shadow: none; padding-top: 0; }
+      .sidebar a { margin: 0 8px; width: auto; font-size: 1em; }
+    }
+    .main-content {
+      margin-left: 180px;
+    }
+    @media (max-width: 600px) {
+      .main-content { margin-left: 0; }
+    }
+  </style>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Film Photography - Sophia Elia's Website</title>
@@ -70,8 +113,14 @@
   </style>
 </head>
 <body>
-  <h1 style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;pointer-events:none;">Film Photography</h1>
-  <div class="scroll-gallery" id="gallery" style="z-index:1;">
+  <div class="sidebar">
+    <a href="/" target="_self">Home</a>
+    <a href="knitting.html" target="_self">Knitting</a>
+    <a href="photography.html" class="active" target="_self">Film Photography</a>
+  </div>
+  <div class="main-content">
+    <h1 style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;pointer-events:none;">Film Photography</h1>
+    <div class="scroll-gallery" id="gallery" style="z-index:1;">
     <img class="slide-img" src="../images/cliffs_s.jpg" alt="Cliffs">
     <img class="slide-img" src="../images/oxford_tree_s.jpg" alt="Oxford Tree">
     <img class="slide-img" src="../images/oxford_butterfly_s.jpg" alt="Oxford Butterfly">
@@ -79,7 +128,7 @@
     <img class="slide-img" src="../images/red_hill4_s.png" alt="Red Hill">
     <img class="slide-img" src="../images/Dillon2_s.png" alt="Dillon">
   </div>
-  <div class="dots" style="position:absolute;bottom:32px;left:0;right:0;z-index:2;">
+    <div class="dots" style="position:absolute;bottom:32px;left:0;right:0;z-index:2;">
     <span class="dot active" onclick="scrollToImage(0)"></span>
     <span class="dot" onclick="scrollToImage(1)"></span>
     <span class="dot" onclick="scrollToImage(2)"></span>
@@ -87,7 +136,8 @@
     <span class="dot" onclick="scrollToImage(4)"></span>
     <span class="dot" onclick="scrollToImage(5)"></span>
   </div>
-  <a class="nav-link" href="knitting.html" style="position:absolute;bottom:8px;left:0;right:0;z-index:2;">&larr; See my Knitting</a>
+    <a class="nav-link" href="knitting.html" style="position:absolute;bottom:8px;left:0;right:0;z-index:2;">&larr; See my Knitting</a>
+  </div>
   <script>
     const gallery = document.getElementById('gallery');
     const images = gallery.getElementsByClassName('slide-img');
