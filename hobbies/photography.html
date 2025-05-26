@@ -8,28 +8,50 @@
   <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
   <style>
     body { font-family: 'Source Sans Pro', Arial, sans-serif; background: #fff; color: #222; margin: 0; }
-    .slideshow-container { max-width: 700px; position: relative; margin: 40px auto 20px auto; }
-    .slide-img { width: 100%; display: none; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-    .active { display: block; }
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 12px;
-      margin-top: -22px;
-      color: #333;
-      font-weight: bold;
-      font-size: 24px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.7);
-      user-select: none;
-      transition: background 0.2s;
-      border: none;
+    html, body {
+      height: 100%;
     }
-    .prev:hover, .next:hover { background: #eee; }
-    .prev { left: 10px; }
-    .next { right: 10px; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .scroll-gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 24px;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      scrollbar-width: thin;
+      background: #fff;
+    }
+    .scroll-gallery::-webkit-scrollbar {
+      height: 10px;
+    }
+    .scroll-gallery::-webkit-scrollbar-thumb {
+      background: #eee;
+      border-radius: 6px;
+    }
+    .slide-img {
+      flex: 0 0 auto;
+      height: 90vh;
+      width: auto;
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      scroll-snap-align: center;
+      background: #fff;
+      margin: 0 auto;
+      display: block;
+      transition: box-shadow 0.2s;
+      object-fit: contain;
+    }
     .dots { text-align: center; margin-top: 16px; }
     .dot {
       cursor: pointer;
@@ -48,53 +70,51 @@
   </style>
 </head>
 <body>
-  <h1>Film Photography</h1>
-  <div class="slideshow-container">
-    <img class="slide-img active" src="../images/cliffs_s.jpg" alt="Cliffs">
+  <h1 style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;pointer-events:none;">Film Photography</h1>
+  <div class="scroll-gallery" id="gallery" style="z-index:1;">
+    <img class="slide-img" src="../images/cliffs_s.jpg" alt="Cliffs">
     <img class="slide-img" src="../images/oxford_tree_s.jpg" alt="Oxford Tree">
     <img class="slide-img" src="../images/oxford_butterfly_s.jpg" alt="Oxford Butterfly">
     <img class="slide-img" src="../images/officeview_s.jpg" alt="Office View">
     <img class="slide-img" src="../images/red_hill4_s.png" alt="Red Hill">
     <img class="slide-img" src="../images/Dillon2_s.png" alt="Dillon">
-    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-    <button class="next" onclick="plusSlides(1)">&#10095;</button>
   </div>
-  <div class="dots">
-    <span class="dot active" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-    <span class="dot" onclick="currentSlide(6)"></span>
+  <div class="dots" style="position:absolute;bottom:32px;left:0;right:0;z-index:2;">
+    <span class="dot active" onclick="scrollToImage(0)"></span>
+    <span class="dot" onclick="scrollToImage(1)"></span>
+    <span class="dot" onclick="scrollToImage(2)"></span>
+    <span class="dot" onclick="scrollToImage(3)"></span>
+    <span class="dot" onclick="scrollToImage(4)"></span>
+    <span class="dot" onclick="scrollToImage(5)"></span>
   </div>
-  <a class="nav-link" href="knitting.html">&larr; See my Knitting</a>
+  <a class="nav-link" href="knitting.html" style="position:absolute;bottom:8px;left:0;right:0;z-index:2;">&larr; See my Knitting</a>
   <script>
-    let slideIndex = 1;
-    const slides = document.getElementsByClassName('slide-img');
+    const gallery = document.getElementById('gallery');
+    const images = gallery.getElementsByClassName('slide-img');
     const dots = document.getElementsByClassName('dot');
-    function showSlides(n) {
-      if (n > slides.length) { slideIndex = 1; }
-      if (n < 1) { slideIndex = slides.length; }
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove('active');
-      }
+    function scrollToImage(idx) {
+      images[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      setActiveDot(idx);
+    }
+    function setActiveDot(idx) {
       for (let i = 0; i < dots.length; i++) {
         dots[i].classList.remove('active');
       }
-      slides[slideIndex-1].classList.add('active');
-      dots[slideIndex-1].classList.add('active');
+      dots[idx].classList.add('active');
     }
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    function currentSlide(n) {
-      slideIndex = n;
-      showSlides(slideIndex);
-    }
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowLeft') plusSlides(-1);
-      if (e.key === 'ArrowRight') plusSlides(1);
+    // Update dot on scroll
+    gallery.addEventListener('scroll', function() {
+      let minDist = Infinity, activeIdx = 0;
+      for (let i = 0; i < images.length; i++) {
+        const rect = images[i].getBoundingClientRect();
+        const galleryRect = gallery.getBoundingClientRect();
+        const dist = Math.abs((rect.left + rect.right)/2 - (galleryRect.left + galleryRect.right)/2);
+        if (dist < minDist) {
+          minDist = dist;
+          activeIdx = i;
+        }
+      }
+      setActiveDot(activeIdx);
     });
   </script>
 </body>
