@@ -44,7 +44,7 @@
 <body>
 
 <header id="header">
-	<!--  <button class=""><span class="lines"></span></button>   -->
+  <!--  <button class=""><span class="lines"></span></button>   -->
   
 
     <!-- LOGO or WEBSITE NAME : START -->
@@ -60,104 +60,19 @@
 </header>
 
 <!-- CONTENT : START -->
+
 <main>
-<article class="single">
-	<header>
-		<p>
-		<h1>My Hobbies </h1>
-		</p>
-        </header>
-
-<h2 style="text-align:center">Knitting</h2>
-<style>
-* {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px; <!-- 16px -->
-  margin-top: -50px;
-  color: green;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 10px;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-</style>
-
-<div class="container" style = "padding:10px; align:center">
-  <img class="mySlides" src="../images/brown_sweater_small.png" style="display:block; width:80%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/gloves_small.png" style="display:block;        width:80%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/hat_small.png" style="display:block;        width:80%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/sweatervest_small.png" style="display:block;width:80%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/vest_small.png" style="display:block;          width:80%; margin-left:auto; margin-right:auto">
-  <img class="mySlides" src="../images/blanket.png" style="display:block;          width:80%; margin-left:auto; margin-right:auto">
-
-  <a class="prev" style="align:center" onclick="plusDivsa(-1,'mySlides')">&#10094;</a>
-  <a class="next" style="align:center" onclick="plusDivsa(1,'mySlides')">&#10095;</a>
-</div>
-
-
-
-<h2 style="text-align:center">Film Photography</h2>
-<div class="container" style = "padding:10px; align:center">
-  <img class="mySlides2" src="../images/cliffs_s.jpg"         style="display:block; width:90%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/oxford_tree_s.jpg"       style="display:block; width:90%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/oxford_butterfly_s.jpg" style="display:block; width:90%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/officeview_s.jpg"     style="display:block; width:90%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/red_hill4_s.png"     style="display:block; width:90%; margin-left:auto; margin-right:auto">
-  <img class="mySlides2" src="../images/Dillon2_s.png"     style="display:block; width:90%; margin-left:auto; margin-right:auto">
-
-  <a class="prev" onclick="plusDivsa(-1,'mySlides2')">&#10094;</a>
-  <a class="next" onclick="plusDivsa(1, 'mySlides2')">&#10095;</a>
-</div>
-
-
-<script>
-var slideIndex = 1;
-showDivsa(slideIndex, "mySlides");
-showDivsa(slideIndex, "mySlides2");
-
-function plusDivsa(n, classname) {
-  showDivsa(slideIndex += n, classname);
-}
-
-function showDivsa(n, classname) {
-  var i;
-  var x = document.getElementsByClassName(classname);
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
+  <article class="single">
+    <header>
+      <h1 style="text-align:center">My Hobbies</h1>
+    </header>
+    <div style="max-width: 500px; margin: 40px auto; text-align: center;">
+      <a href="knitting.html" style="display: block; padding: 24px 0; font-size: 1.3em; color: #337ab7; text-decoration: none; border: 1px solid #eee; border-radius: 8px; margin-bottom: 32px; background: #fafbfc; transition: box-shadow 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">🧶 See my Knitting Projects</a>
+      <a href="photography.html" style="display: block; padding: 24px 0; font-size: 1.3em; color: #337ab7; text-decoration: none; border: 1px solid #eee; border-radius: 8px; background: #fafbfc; transition: box-shadow 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">📷 See my Film Photography</a>
+    </div>
+    <p style="text-align:center; color:#888; margin-top:40px;">More hobbies coming soon!</p>
+  </article>
+</main>
 
 </body>
 </main>

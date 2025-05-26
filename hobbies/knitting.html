@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knitting - Sophia Elia's Website</title>
+  <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+  <style>
+    body { font-family: 'Source Sans Pro', Arial, sans-serif; background: #fff; color: #222; margin: 0; }
+    .slideshow-container { max-width: 700px; position: relative; margin: 40px auto 20px auto; }
+    .slide-img { width: 100%; display: none; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .active { display: block; }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px;
+      margin-top: -22px;
+      color: #333;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.7);
+      user-select: none;
+      transition: background 0.2s;
+      border: none;
+    }
+    .prev:hover, .next:hover { background: #eee; }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .dots { text-align: center; margin-top: 16px; }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+      border: none;
+    }
+    .dot.active, .dot:hover { background-color: #333; }
+    .nav-link { display: block; text-align: center; margin: 24px 0 0 0; color: #337ab7; text-decoration: none; }
+    h1 { text-align: center; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <h1>Knitting</h1>
+  <div class="slideshow-container">
+    <img class="slide-img active" src="../images/brown_sweater_small.png" alt="Brown Sweater">
+    <img class="slide-img" src="../images/gloves_small.png" alt="Gloves">
+    <img class="slide-img" src="../images/hat_small.png" alt="Hat">
+    <img class="slide-img" src="../images/sweatervest_small.png" alt="Sweater Vest">
+    <img class="slide-img" src="../images/vest_small.png" alt="Vest">
+    <img class="slide-img" src="../images/blanket.png" alt="Blanket">
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+  </div>
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+  </div>
+  <a class="nav-link" href="photography.html">See my Film Photography &rarr;</a>
+  <script>
+    let slideIndex = 1;
+    const slides = document.getElementsByClassName('slide-img');
+    const dots = document.getElementsByClassName('dot');
+    function showSlides(n) {
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+      }
+      slides[slideIndex-1].classList.add('active');
+      dots[slideIndex-1].classList.add('active');
+    }
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+      slideIndex = n;
+      showSlides(slideIndex);
+    }
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') plusSlides(-1);
+      if (e.key === 'ArrowRight') plusSlides(1);
+    });
+  </script>
+</body>
+</html>
